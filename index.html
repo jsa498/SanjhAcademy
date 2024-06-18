@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saanjh Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Saanjh Academy</h1>
+            <nav>
+                <button id="attendance-tab" class="active">Attendance</button>
+                <button id="teacher-signin-tab">Teacher Sign-In/Out</button>
+                <button id="student-master-tab">Student Master List</button>
+                <button id="register-student-tab">Register New Student</button>
+                <button id="register-teacher-tab">Register New Teacher</button>
+            </nav>
+        </header>
+
+        <section id="attendance-section" class="active">
+            <h2>Attendance</h2>
+            <div class="selectors">
+                <label for="group-select">Select Group:</label>
+                <select id="group-select"></select>
+
+                <label for="year-select">Select Year:</label>
+                <select id="year-select"></select>
+
+                <label for="month-select">Select Month:</label>
+                <select id="month-select"></select>
+            </div>
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th colspan="5">Attendance</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="teacher-signin-section">
+            <h2>Teacher Sign-In/Out</h2>
+            <div class="selectors">
+                <label for="signin-year-select">Select Year:</label>
+                <select id="signin-year-select"></select>
+
+                <label for="signin-month-select">Select Month:</label>
+                <select id="signin-month-select"></select>
+            </div>
+            <table id="teacher-signin-table">
+                <thead>
+                    <tr>
+                        <th>Teacher Name</th>
+                        <th>Occupation</th>
+                        <th>Contact</th>
+                        <th colspan="5">Sign-In/Out</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="student-master-section">
+            <h2>Student Master List</h2>
+            <table id="student-master-table">
+                <thead>
+                    <tr>
+                        <th>Group</th>
+                        <th>Student Name</th>
+                        <th>Guardian Name</th>
+                        <th>Contact Number</th>
+                        <th>Grade</th>
+                        <th>Date of Birth</th>
+                        <th>Fees Status</th>
+                        <th>Fees Received</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="register-student-section">
+            <h2>Register New Student</h2>
+            <form id="register-student-form">
+                <div class="form-group">
+                    <label for="student-name">Student Name:</label>
+                    <input type="text" id="student-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guardian-name">Guardian Name:</label>
+                    <input type="text" id="guardian-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-contact">Contact Number:</label>
+                    <input type="text" id="student-contact" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-group">Group:</label>
+                    <select id="student-group" required>
+                        <option value="S-3">S-3</option>
+                        <option value="S-2">S-2</option>
+                        <option value="S-1">S-1</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="B">B</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-grade">Grade:</label>
+                    <input type="text" id="student-grade" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-dob-year">Date of Birth:</label>
+                    <div class="dob-inputs">
+                        <input type="number" id="student-dob-year" placeholder="YYYY" required>
+                        <input type="number" id="student-dob-month" placeholder="MM" required>
+                        <input type="number" id="student-dob-day" placeholder="DD" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fees-status">Fees Status:</label>
+                    <select id="fees-status" required>
+                        <option value="Paid">Paid</option>
+                        <option value="Unpaid">Unpaid</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fees-received">Fees Received:</label>
+                    <input type="number" id="fees-received" required>
+                </div>
+
+                <button type="submit">Register Student</button>
+            </form>
+        </section>
+
+        <section id="register-teacher-section">
+            <h2>Register New Teacher</h2>
+            <form id="register-teacher-form">
+                <div class="form-group">
+                    <label for="teacher-name">Teacher Name:</label>
+                    <input type="text" id="teacher-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="teacher-contact">Contact Number:</label>
+                    <input type="text" id="teacher-contact" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="teacher-group">Group:</label>
+                    <select id="teacher-group">
+                        <option value="">None</option>
+                        <option value="S-3">S-3</option>
+                        <option value="S-2">S-2</option>
+                        <option value="S-1">S-1</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="B">B</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="teacher-occupation">Occupation:</label>
+                    <select id="teacher-occupation" required>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Volunteer">Volunteer</option>
+                    </select>
+                </div>
+
+                <button type="submit">Register Teacher</button>
+            </form>
+        </section>
+
+        <div id="edit-teacher-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit Teacher Details</h2>
+                <form id="edit-teacher-form">
+                    <input type="hidden" id="edit-teacher-index">
+                    <div class="form-group">
+                        <label for="edit-teacher-name">Teacher Name:</label>
+                        <input type="text" id="edit-teacher-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-teacher-contact">Contact Number:</label>
+                        <input type="text" id="edit-teacher-contact" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-teacher-group">Group:</label>
+                        <select id="edit-teacher-group">
+                            <option value="">None</option>
+                            <option value="S-3">S-3</option>
+                            <option value="S-2">S-2</option>
+                            <option value="S-1">S-1</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="B">B</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-teacher-occupation">Occupation:</label>
+                        <select id="edit-teacher-occupation" required>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Admin">Admin</option>
+                            <option value="Volunteer">Volunteer</option>
+                        </select>
+                    </div>
+                    <button type="submit">Update Details</button>
+                    <button type="button" id="delete-teacher-button">Delete Teacher</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
